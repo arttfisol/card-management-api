@@ -1,0 +1,302 @@
+{
+	"info": {
+		"_postman_id": "ff77c11d-9b11-43bb-be48-12a80289a8ef",
+		"name": "Card Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "10849441"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"tester@test.com\",\n    \"password\": \"password\",\n    \"name\": \"Tester01\",\n    \"picture\": \"https://userprofile.com/default\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4040/api/users"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"tester@test.com\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4040/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "Comment",
+					"item": [
+						{
+							"name": "Add Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYTMyMzc2OWQxYjk3M2Q3MWI0IiwiaWF0IjoxNzA3Nzk5ODc2LCJleHAiOjE3MDc4ODYyNzZ9.ifmAPm0GOKuZCu9F8TXG7Cok1qqTKltifzRUh5KgL4w"
+									}
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"desc\": \"comment 4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:4040/api/cards/65caf33923769d1b973d71dc/comments"
+							},
+							"response": []
+						},
+						{
+							"name": "Comment List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYTMyMzc2OWQxYjk3M2Q3MWI0IiwiaWF0IjoxNzA3Nzk5ODc2LCJleHAiOjE3MDc4ODYyNzZ9.ifmAPm0GOKuZCu9F8TXG7Cok1qqTKltifzRUh5KgL4w"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:4040/api/cards/65caf33923769d1b973d71dc/comments"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYTMyMzc2OWQxYjk3M2Q3MWI0IiwiaWF0IjoxNzA3Nzk5ODc2LCJleHAiOjE3MDc4ODYyNzZ9.ifmAPm0GOKuZCu9F8TXG7Cok1qqTKltifzRUh5KgL4w"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:4040/api/cards/65caf33923769d1b973d71dc/comments/65caf5db23769d1b973d7223"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYjYyMzc2OWQxYjk3M2Q3MWJhIiwiaWF0IjoxNzA3ODAwMzcwLCJleHAiOjE3MDc4ODY3NzB9.V1D-cyJFf0aI3lSd76dMIl1Aoey-NkjDfraegLeDiYY"
+									}
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"desc\": \"Comment Edited\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:4040/api/cards/65caf33923769d1b973d71dc/comments/65caf5db23769d1b973d7223"
+							},
+							"response": []
+						},
+						{
+							"name": "Detete Comment",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYjYyMzc2OWQxYjk3M2Q3MWJhIiwiaWF0IjoxNzA3ODA5Nzk2LCJleHAiOjE3MDc4OTYxOTZ9.7p-d311wSQ7fjZPEx6Oo2yLzawP5q_eIrIkZQMz2I8o"
+									}
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:4040/api/cards/65caf33923769d1b973d71dc/comments/65caf5db23769d1b973d721f"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Change Log",
+					"item": [
+						{
+							"name": "Card Change Log List",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": {
+										"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYTMyMzc2OWQxYjk3M2Q3MWI0IiwiaWF0IjoxNzA3Nzk5ODc2LCJleHAiOjE3MDc4ODYyNzZ9.ifmAPm0GOKuZCu9F8TXG7Cok1qqTKltifzRUh5KgL4w"
+									}
+								},
+								"method": "GET",
+								"header": [],
+								"url": "http://localhost:4040/api/cards/65caf33f23769d1b973d71df/change_logs"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Card List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYTMyMzc2OWQxYjk3M2Q3MWI0IiwiaWF0IjoxNzA3Nzk5MjYxLCJleHAiOjE3MDc4ODU2NjF9.xASUeA-n855XiGebpJIffdMciuXNL7hCcORUJ_ov1NU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:4040/api/cards"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYjYyMzc2OWQxYjk3M2Q3MWJhIiwiaWF0IjoxNzA3Nzk5MzM1LCJleHAiOjE3MDc4ODU3MzV9.70KLYpwY_Vg3P9IDuBlvEJcWX9mDGaQuhQ0n9wi0UgU"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"Interview 1\",\n    \"desc\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In vitae turpis massa sed elementum tempus egestas sed sed. Pulvinar neque laoreet suspendisse interdum consectetur libero. Ut lectus arcu bibendum at varius vel. Feugiat in ante metus dictum at tempor commodo ullamcorper a. Lacinia at quis risus sed. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate. Nulla aliquet enim tortor at auctor urna nunc.\",\n    \"state\": \"todo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4040/api/cards"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjMmY5ZWJjNjIyNzczNGQyOWI2MGE0IiwiaWF0IjoxNzA3Mjc5MzM4LCJleHAiOjE3MDczNjU3Mzh9.kP_2ZtN5lE8WPDLDPhwnIkCavC3djFuwv3AiO4oFoIg"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"topic\": \"topic\",\n    \"desc\": \"desc\",\n    \"state\": \"todo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4040/api/cards/65c305ff1628e6b19f931e2e"
+					},
+					"response": []
+				},
+				{
+					"name": "Archive Card",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYTMyMzc2OWQxYjk3M2Q3MWI0IiwiaWF0IjoxNzA3Nzk5ODc2LCJleHAiOjE3MDc4ODYyNzZ9.ifmAPm0GOKuZCu9F8TXG7Cok1qqTKltifzRUh5KgL4w"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4040/api/cards/65caf33f23769d1b973d71df/archive"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Card",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjVjYWYyYjYyMzc2OWQxYjk3M2Q3MWJhIiwiaWF0IjoxNzA3Nzk5MzM1LCJleHAiOjE3MDc4ODU3MzV9.70KLYpwY_Vg3P9IDuBlvEJcWX9mDGaQuhQ0n9wi0UgU"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:4040/api/cards/65caf33f23769d1b973d71df"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

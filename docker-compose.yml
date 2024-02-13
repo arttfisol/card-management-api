@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo:5.0.13
+    ports:
+      - 27017:27017
+    volumes:
+      - db:/data/db
+  api:
+    depends_on:
+      - mongodb
+    build: .
+    restart: always
+    volumes:
+      - ./.env:/usr/src/app/.env
+    ports:
+      - ${PORT}:${PORT}
+    
+
+volumes:
+  db:

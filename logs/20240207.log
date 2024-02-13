@@ -1,0 +1,6 @@
+2024-02-07T03:15:38.153Z info   : start instance...
+2024-02-07T03:15:38.173Z info   : Mongo Connected
+2024-02-07T03:15:38.175Z info   : server started on port 4040 (production)
+2024-02-07T03:15:42.732Z info   : Received Termination Signal, Preparing graceful shutdown process..
+2024-02-07T03:15:42.733Z info   : Server closed
+2024-02-07T03:15:42.737Z info   : No task left, Graceful shutdown finished!
